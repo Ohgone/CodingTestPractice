@@ -1,14 +1,18 @@
+import heapq
+
 n = int(input())
-
 arr = []
+result = 0
+
 for _ in range(n):
-    arr.append(int(input()))
+    heapq.heappush(arr, int(input()))
 
-arr.sort()
+if n == 1:
+    print(0)
+else:
+    while len(arr) > 1:
+        temp = heapq.heappop(arr) + heapq.heappop(arr)
+        result += temp
+        heapq.heappush(arr, temp)
 
-result = [arr[0]]
-temp = 0
-for i in range(1, n):
-    result.append(result[i-1]+arr[i])
-
-print(sum(result)-result[0])
+    print(result)
