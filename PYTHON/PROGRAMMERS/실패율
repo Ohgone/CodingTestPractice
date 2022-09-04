@@ -1,0 +1,15 @@
+from collections import Counter
+
+def solution(N, stages):
+    result = []
+    
+    for i in range(1, N+1):
+        c = len(list((filter(lambda x: x>i, stages))))
+        if c == 0:
+            c += 1
+        result.append((i, stages.count(i) / c))
+        
+    result.sort(key=lambda x: x[1], reverse=True)
+    answer = [i for i, j in result]
+    
+    return answer
