@@ -1,0 +1,13 @@
+def solution(lottos, win_nums):
+    for i in win_nums:
+        if i in lottos:
+            lottos.remove(i)
+    max_rank = len(lottos) - lottos.count(0) + 1
+    if max_rank > 6:
+        max_rank = 6
+        
+    min_rank = len(lottos) + 1
+    if min_rank > 6:
+        min_rank = 6
+        
+    return [max_rank, min_rank]
