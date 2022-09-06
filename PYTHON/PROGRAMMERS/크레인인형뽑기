@@ -1,0 +1,26 @@
+def solution(board, moves):
+    answer = 0
+    stack = []
+    board_x = len(board[0])
+    board_y = len(board)
+    board_rev = [[0] * board_y for _ in range(board_x)]
+    
+    for i in range(board_x):
+        for j in range(board_y):
+            board_rev[j][i] = board[i][j]
+    
+    for move in moves:
+        for idx in range(board_y):
+            if board_rev[move-1][idx] != 0:
+                num = board_rev[move-1][idx]
+                if len(stack) == 0:
+                    stack.append(num)
+                elif stack[-1] == num:
+                    stack.pop()
+                    answer += 2
+                else:
+                    stack.append(num)
+                board_rev[move-1][idx] = 0
+                break
+
+    return answer
