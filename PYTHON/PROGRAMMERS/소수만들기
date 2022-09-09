@@ -1,0 +1,19 @@
+from itertools import combinations
+
+
+
+def solution(nums):
+    check = []
+    for i in combinations(nums, 3):
+        check.append(sum(i))
+
+    arr = set(range(2, 3001))
+    for i in range(2, 3001):
+        if i in arr:
+            arr -= set(range(i+i, 3001, i))
+    
+    answer = 0
+    for i in check:
+        if i in arr:
+            answer += 1
+    return answer
