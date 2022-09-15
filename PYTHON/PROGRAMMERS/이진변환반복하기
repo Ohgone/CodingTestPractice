@@ -1,0 +1,10 @@
+def solution(s):
+    zero = 0
+    count = 0
+    while s != '1':
+        zero_count = s.count("0")
+        zero += zero_count
+        s = bin(len(s) - zero_count)[2:]
+        count += 1
+    return [count, zero]
+        
