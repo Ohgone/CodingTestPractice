@@ -1,0 +1,36 @@
+def solution(fees, records):
+    record = []
+    result = {}
+    fees_total = []
+    
+    for i in records:
+        # 시간 분단위로
+        pars = i.split()
+        hour = int(pars[0].split(':')[0]) * 60
+        minute = int(pars[0].split(':')[1])
+        time = hour + minute
+        
+        if pars[2] == 'IN':
+            record.append((pars[1], time))
+            if pars[1] in result.keys(): pass
+            else: result[pars[1]] = 0
+        else:
+            for i in record:
+                if pars[1] == i[0]:
+                    result[pars[1]] += (time - i[1])
+                    record.remove(i)
+                    break
+    for i in record: result[i[0]] += 1439 - i[1]
+    l = sorted(result.items())
+    
+    for car_num, time in l:
+        if time <= fees[0]:
+            fees_total.append(fees[1])
+        else:
+            time -= fees[0]
+            if time % fees[2] == 0:
+                fees_total.append(fees[3] * (time // fees[2]) + fees[1])
+            else:
+                fees_total.append(fees[3] * (time // fees[2] + 1) + fees[1])
+        
+    return fees_total
