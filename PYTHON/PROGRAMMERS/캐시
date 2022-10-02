@@ -1,0 +1,22 @@
+def solution(cacheSize, cities):
+    cache = []
+    time = 0 
+    
+    if cacheSize == 0:
+        return 5 * len(cities)
+    
+    for i in cities:
+        i = i.lower()
+        if i in cache:
+            time += 1
+            cache.remove(i)
+            cache.append(i)
+        else:
+            time += 5
+            if len(cache) < cacheSize:
+                cache.append(i)
+            else:
+                cache.pop(0)
+                cache.append(i)
+        
+    return time
