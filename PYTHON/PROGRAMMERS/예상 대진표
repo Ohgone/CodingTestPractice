@@ -1,0 +1,19 @@
+import math
+
+def solution(n,a,b):
+    answer = 1
+    if a < b:
+        m, M = a, b
+    else:
+        m, M = b, a
+    
+    while True:
+        if M - m == 1 and M % 2 == 0:
+            break
+        m = math.ceil(m / 2)
+        M = math.ceil(M / 2)
+        answer += 1
+    
+    return answer
+        
+
