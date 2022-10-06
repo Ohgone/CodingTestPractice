@@ -1,0 +1,19 @@
+from collections import deque
+
+def solution(priorities, location):
+    priorities = deque(priorities)
+    index = deque(range(0, len(priorities)))
+    count = 0
+    
+    while priorities:
+        if priorities[0] == max(priorities):
+            priorities.popleft()
+            temp = index.popleft()
+            count += 1
+            if location == temp:
+                answer = count
+        else:
+            priorities.append(priorities.popleft())
+            index.append(index.popleft())
+        
+    return answer
