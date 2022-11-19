@@ -1,0 +1,10 @@
+def solution(n):
+    num = 0
+    while True:
+        num += 1
+        sqrt = num * num
+        if sqrt == n:
+            return 1
+        if sqrt > n:
+            return 2
+    
