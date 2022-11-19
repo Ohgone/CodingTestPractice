@@ -1,0 +1,3 @@
+def solution(num_list):
+    even = len(list(filter(lambda x:x%2==0, num_list))) 
+    return [even, len(num_list)-even]
