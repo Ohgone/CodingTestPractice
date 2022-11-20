@@ -1,0 +1,9 @@
+def solution(n):
+    answer = 0
+    pizza = 0
+    while True:
+        answer += 1
+        pizza += 6
+        if pizza % n == 0:
+            return answer
+        
