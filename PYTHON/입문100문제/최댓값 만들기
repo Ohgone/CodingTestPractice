@@ -1,0 +1,9 @@
+from itertools import combinations
+
+def multi(x, y):
+    return x * y
+
+def solution(numbers):
+    combi = list(combinations(numbers, 2))
+    answer = [multi(x, y) for x, y in combi]
+    return max(answer)
