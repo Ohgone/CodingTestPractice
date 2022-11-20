@@ -1,0 +1,12 @@
+def fac(num):
+    if num <= 1:
+        return 1
+    return num * fac(num-1)
+
+def solution(n):
+    answer = 0
+    while True:
+        answer += 1
+        if fac(answer) > n:
+            return answer - 1
+    return
