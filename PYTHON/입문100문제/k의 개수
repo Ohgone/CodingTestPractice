@@ -1,0 +1,8 @@
+def solution(i, j, k):
+    answer = 0
+    for i in range(i, j+1):
+        temp = list(map(int, str(i)))
+        for t in temp:
+            if k == t:
+                answer += 1
+    return answer
