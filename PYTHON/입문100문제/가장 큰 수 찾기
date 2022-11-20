@@ -1,0 +1,4 @@
+def solution(array):
+    max_num = max(array)
+    max_num_index = array.index(max_num)
+    return [max_num, max_num_index]
