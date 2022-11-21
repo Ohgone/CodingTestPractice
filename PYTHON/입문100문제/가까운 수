@@ -1,0 +1,9 @@
+def solution(array, n):
+    answer = [0, 101]
+    for i in array:
+        if abs(i-n) == answer[1]:
+            answer[0] = min(i, answer[0])
+        elif abs(i-n) < answer[1]:
+            answer[0] = i
+            answer[1] = abs(i-n)
+    return answer[0]
