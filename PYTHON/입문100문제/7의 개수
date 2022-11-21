@@ -1,0 +1,8 @@
+def solution(array):
+    answer = 0
+    for i in array:
+        for seven in str(i):
+            if seven == '7':
+                answer += 1
+                
+    return answer
