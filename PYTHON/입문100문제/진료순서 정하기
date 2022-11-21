@@ -1,0 +1,7 @@
+def solution(emergency):
+    answer = []
+    emergency_index = sorted(emergency, reverse=True)
+    
+    for i in emergency:
+        answer.append(emergency_index.index(i)+1)
+    return answer
