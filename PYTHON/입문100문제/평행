@@ -1,0 +1,28 @@
+def solution(dots):
+    check = []
+    
+    for dot in dots:
+        for _dot in dots:
+            if dot != _dot:
+                x = dot[0] - _dot[0]
+                y = dot[1] - _dot[1]
+                check.append([x, y])
+    result = []
+    for x, y in check:
+        count_zero = 0
+        if x == 0:
+            count_zero += 1
+            continue
+        result.append(y / x)
+    
+    for i in result:
+        n = 0
+        for j in result:
+            if i == j:
+                n += 1
+            if n >= 4:
+                return 1
+    else:
+        return 0
+                
+            
