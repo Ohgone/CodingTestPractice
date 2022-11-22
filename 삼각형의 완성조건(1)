@@ -1,6 +1,0 @@
-def solution(sides):
-    M = max(sides)
-    if sum(sides) > 2 * M:
-        return 1
-    else:
-        return 2
