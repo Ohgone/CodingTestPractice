@@ -1,0 +1,17 @@
+def solution(my_str, n):
+    answer = []
+    
+    index = -1
+    try:
+        while True:
+            temp = ''
+            for _ in range(n):
+                index += 1
+                temp += my_str[index]
+            answer.append(temp)
+    except:
+        if temp == "":
+            return answer
+        else:
+            answer.append(temp)
+            return answer
