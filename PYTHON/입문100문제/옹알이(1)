@@ -1,0 +1,28 @@
+def check(string):
+    n = 0
+    if "aya" in string:
+        string = string.replace("aya", " ")
+        n += 1
+    if "ye" in string:
+        string = string.replace("ye", " ")
+        n += 1
+    if "woo" in string:
+        string = string.replace("woo", " ")
+        n += 1
+    if "ma" in string:
+        string = string.replace("ma", " ")
+        n += 1
+    
+    if n != 0 and string == " " * n:
+        return True
+    else:
+        return False
+    
+    
+def solution(babbling):
+    answer = 0
+    for i in babbling:
+        if check(i):
+            answer += 1
+    
+    return answer
