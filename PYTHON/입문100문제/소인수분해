@@ -1,0 +1,16 @@
+def factorization(x):
+    d = 2
+    result = []
+    while 2 <= x:
+        if x % d == 0:
+            result.append(d)
+            x = x // d
+        else: d = d + 1
+    return result
+
+def solution(n):
+    answer = factorization(n)        
+    answer = list(set(answer))
+    answer.sort()
+    
+    return answer
