@@ -1,0 +1,9 @@
+def solution(numbers, k):
+    index = 1
+    array_len = len(numbers)
+    
+    for _ in range(k-1):
+        index += 2
+        if index > array_len:
+            index = index % array_len
+    return numbers[index-1]
