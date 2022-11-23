@@ -1,0 +1,11 @@
+from itertools import permutations
+
+def solution(spell, dic):
+    spell_combinations = (list(permutations(spell, len(spell))))
+        
+    for combi in spell_combinations:
+        check = "".join(combi)
+        if check in dic:
+            return 1
+    else: return 2
+    
