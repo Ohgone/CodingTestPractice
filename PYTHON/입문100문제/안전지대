@@ -1,0 +1,24 @@
+def boom(x, y, board, line_length):
+    move_x = [0, 0, 1, -1, -1, -1, 1, 1]
+    move_y = [1, -1, 0, 0, -1, 1, -1, 1]
+    for i in range(8):
+        temp_x = x + move_x[i]
+        temp_y = y + move_y[i]
+        if temp_x < 0 or temp_x > line_length - 1 or temp_y < 0 or temp_y > line_length - 1:
+            continue
+        if board[temp_x][temp_y] == 0:
+            board[temp_x][temp_y] = 2
+    return board
+
+def solution(board):
+    line_length = len(board)
+    answer = 0
+    
+    for x in range(line_length):
+        for y in range(line_length):
+            if (board[x][y]) == 1:
+                board = boom(x, y, board, line_length)
+
+    for b in board:
+        answer += b.count(0)
+    return answer
