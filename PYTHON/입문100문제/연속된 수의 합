@@ -1,0 +1,10 @@
+def solution(num, total):
+    if num % 2 == 0: # num이 짝수
+        mid = total // num
+        m = (num - 1) // 2
+        return (list(range(mid-m, mid+m+2)))
+    else:
+        mid = total // num
+        m = (num - 1) // 2
+        return (list(range(mid-m, mid+m+1)))
+        
