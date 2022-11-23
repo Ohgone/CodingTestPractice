@@ -1,0 +1,8 @@
+def solution(id_pw, db):
+    if id_pw in db:
+        return "login"
+    for data in db:
+        if id_pw[0] == data[0]:
+            return "wrong pw"
+    else: return "fail"
+            
