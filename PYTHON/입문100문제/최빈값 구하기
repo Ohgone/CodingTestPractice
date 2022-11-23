@@ -1,0 +1,13 @@
+from collections import Counter
+
+def solution(array):
+    array = Counter(array)
+    M = max(array.values())
+    answer = 0
+    
+    for i in array:
+        if array[i] == M and answer != 0:
+            return -1
+        elif array[i] == M:
+            answer = i        
+    return answer
