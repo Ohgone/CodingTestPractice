@@ -1,0 +1,14 @@
+from collections import deque
+
+def solution(A, B):
+    if A == B:
+        return 0
+    A = deque(A)
+    B = deque(B)
+    n = 0
+    while n < len(A)+1:
+        n += 1
+        A.appendleft(A.pop())
+        if A == B:
+            return n
+    else: return -1
