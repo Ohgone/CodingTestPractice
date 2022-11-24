@@ -1,0 +1,11 @@
+def solution(score):
+    answer = []
+    result = []
+    for i in score:
+        rev = (i[0] + i[1]) / 2
+        answer.append(rev)
+    answer_rank = sorted(answer, reverse=True)
+    
+    for i in answer:
+        result.append(answer_rank.index(i)+1)
+    return result
