@@ -1,0 +1,19 @@
+def solution(polynomial):
+    answer = polynomial.split("+")
+    answer = list(map(lambda x:x.strip(), answer))
+    result_x = 0
+    result = 0
+    
+    for i in answer:
+        if i[-1] == 'x':
+            if len(i) == 1: result_x += 1
+            else: result_x += int(i[:-1])
+        else: result += int(i)
+        
+    if result_x == 1: result_x = 'x'
+    else: result_x = str(result_x) + 'x'
+    
+    if result_x == "0x" and result == 0: return "0"
+    elif result_x == "0x": return f"{result}"
+    elif result == 0: return f"{result_x}"
+    else: return f"{result_x} + {result}"
