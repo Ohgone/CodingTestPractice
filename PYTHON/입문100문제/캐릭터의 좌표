@@ -1,0 +1,15 @@
+def solution(keyinput, board):
+    x = 0
+    y = 0
+    x_limit_left = -(board[0] - 1) // 2
+    x_limit_right = (board[0] - 1) // 2
+    y_limit_left = -(board[1] - 1) // 2
+    y_limit_right = (board[1] - 1) // 2
+
+    for i in keyinput:
+        if i == 'left' and (x - 1) >= x_limit_left: x -= 1
+        elif i == 'right' and (x + 1) <= x_limit_right: x += 1
+        elif i == 'down' and (y - 1) >= y_limit_left: y -= 1
+        elif i == 'up' and (y + 1) <= y_limit_right: y += 1
+        
+    return [x, y]
