@@ -1,0 +1,8 @@
+def solution(sides):
+    big = sides[0]
+    small = sides[1]
+    
+    if big >= small: pass
+    else: big, small = small, big
+    
+    return small * 2 - 1
