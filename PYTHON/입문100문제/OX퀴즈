@@ -1,0 +1,20 @@
+def strip_eval(s):
+    s1 = s[0].strip()
+    s2 = s[1].strip()
+    return [s1, s2]
+
+def solution(quiz):
+    answer = []
+    result = []
+    for q in quiz:
+        q = list(q.split("="))
+        answer.append(q)
+    
+    answer = list(map(strip_eval, answer))
+    
+    for i, j in answer:
+        if eval(i) == int(j):
+            result.append("O")
+        else: result.append("X")
+    
+    return result
