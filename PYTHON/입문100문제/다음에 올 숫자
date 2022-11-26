@@ -1,0 +1,7 @@
+def solution(common):
+    i = common[1] - common[0]
+    j = common[2] - common[1]
+    if i == j:
+        return common[-1] + i
+    else:
+        return common[-1] * (common[1] / common[0])
