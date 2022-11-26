@@ -1,0 +1,12 @@
+def solution(s):
+    answer = []
+    num = 0
+    s = list(s.split())
+    
+    for i in s:
+        if i != "Z": answer.append(int(i))
+        else:
+            if len(answer) == 0: continue
+            else: answer.pop()
+    
+    return sum(answer)
