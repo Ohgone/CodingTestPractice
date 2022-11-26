@@ -1,0 +1,16 @@
+def solution(denum1, num1, denum2, num2):
+    result_denum = (denum1 * num2) + (denum2 * num1)
+    result_num = num1 * num2
+    num = 0
+    
+    for i in range(min(result_denum, result_num), 1, -1):
+        if result_denum % i == 0 and result_num % i == 0:
+            num = i
+            break
+            
+    if num == 0:
+        return [result_denum, result_num]
+    else:
+        return [result_denum // num, result_num // num]
+            
+    
