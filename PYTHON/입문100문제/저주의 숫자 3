@@ -1,0 +1,16 @@
+def solution(n):
+    count = 0
+    answer = 0
+    while count < n:
+        answer += 1
+        if answer % 3 == 0:
+            continue
+        if len(str(answer)) == 2:
+            if str(answer)[0] == '3' or str(answer)[1] == '3':
+                continue
+        if len(str(answer)) == 3:
+            if str(answer)[0] == '3' or str(answer)[1] == '3' or str(answer)[2] == '3':
+                continue
+        count += 1
+        
+    return answer
