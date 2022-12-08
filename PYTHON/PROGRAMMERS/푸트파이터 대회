@@ -1,0 +1,12 @@
+def solution(food):
+    answer = ''
+    
+    for i, f in enumerate(food[1:]):
+        if f == 1:
+            continue
+        else:
+            f = f // 2
+            answer += str(i+1) * f
+    answer += ('0' + answer[::-1])
+        
+    return answer
