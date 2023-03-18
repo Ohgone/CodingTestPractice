@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{   
+    int hour = 0, min = 0;
+    scanf("%d %d", &hour, &min);
+
+    if (min >= 45) {
+        min -= 45;
+    }
+    else {
+        min += 15;
+        hour -= 1;
+        if (hour < 0) {
+            hour += 24;
+        }
+    }
+
+    printf("%d %d", hour, min);
+
+    return 0;
+}  
