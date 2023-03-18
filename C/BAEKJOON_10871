@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{   
+    int len = 0, num = 0;
+    scanf("%d %d", &len, &num);
+    int* arr = malloc(sizeof(int) * len);
+
+    for (int i = 0; i < len; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    for (int i = 0; i < len; i++) {
+        if (arr[i] < num) {
+            printf("%d ", arr[i]);
+        }
+    }
+    free(arr);
+    return 0;
+}  
