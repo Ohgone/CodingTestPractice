@@ -1,0 +1,24 @@
+/* factorial 헤더파일 */
+
+#define ONE 1
+int factorial(int x)
+{
+	if (x > ONE){
+		return x * factorial(x-1);
+	}
+	else {
+		return ONE;
+	}
+} 
+
+/* 2-4.c */
+#include <stdio.h>
+#include <conio.h>
+#include "factorial.h"
+
+void main(){
+	int x;
+	scanf("%d", &x);
+	printf("%d != %d", x, factorial(x));
+	getch();
+}
