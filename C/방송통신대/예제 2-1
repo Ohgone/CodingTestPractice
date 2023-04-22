@@ -1,0 +1,15 @@
+#include <stdio.h>
+#define PI 3.141592
+const int K=10;
+
+void main(){
+	double a;
+	a =K+PI;
+	printf("%f\n", a);
+	
+	int x, y, z;
+	x = 10;
+	y = 20;
+	z = x + y;
+	printf("%d\n", z);
+}
