@@ -1,0 +1,10 @@
+#include <stdio.h>
+
+void main()
+{
+	char c;
+	printf("소문자 한개를 입력하세요.\n");
+	c = getchar();
+	c -= 32;
+	putchar(c);
+}
