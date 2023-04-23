@@ -1,0 +1,11 @@
+#include <stdio.h>
+#define KILO 1.609
+
+void main()
+{
+	float miles, kms;
+	printf("\t input(miles)==>");
+	scanf("%f", &miles);
+	kms = miles * KILO;
+	printf("\t %f mile=%f km \n", miles, kms); 
+ } 
