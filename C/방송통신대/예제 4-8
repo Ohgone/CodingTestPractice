@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+void main(){
+	int count;
+	int tmp;
+	int total=0;
+	
+	for(count=1; count<=5; count++){
+		printf("%d번째 정숫값을 입력한 후 Enter키를 누르세요. ", count);
+		scanf("%d", &tmp);
+		total += tmp;
+	}
+	printf("읽은 정수의 총합은 %d입니다.", total);
+}
