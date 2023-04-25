@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <string.h>
+
+void main(){
+	char string[] = "abcdfghijklmnopqrstuvwxyz";
+	unsigned i, len;
+	puts(string);
+	len = strlen(string);
+	for(i=0; i<len; i++){
+		string[i] = string[i] & 0b11011111;
+	}
+	puts(string);
+}
