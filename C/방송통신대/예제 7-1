@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+
+struct student
+{
+	char name[30];
+	char phone[20];
+	char address[100];
+};
+
+void main()
+{
+	struct student info;
+	
+	strcpy(info.name, "홍길동");
+	strcpy(info.phone, "02-1234-5678");
+	strcpy(info.address, "서울시 종로구 동숭동 169");
+	
+	printf("이름 : %s \n", info.name);
+	printf("전화 : %s \n", info.phone);
+	printf("주소 : %s \n", info.address);
+}
