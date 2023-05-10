@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+void main()
+{
+	FILE *fp;
+	char buff[100];
+	
+	fp = fopen("sample1", "r");
+	
+	if(fp != NULL){
+		while(1){
+			fgets(buff, 100, fp);
+			if(feof(fp)) break;
+			printf(buff);
+		}
+		fclose(fp);
+	}
+}
