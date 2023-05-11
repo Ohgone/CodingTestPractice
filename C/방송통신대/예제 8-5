@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void main()
+{
+	FILE *fp;
+	int ch;
+	int str;
+	
+	if((fp=fopen("sample2", "r"))==NULL){
+		printf("***파일을 열 수 없습니다.***\n");
+		exit(0);
+	}
+	
+	fseek(fp, 1, SEEK_END);
+	for(ch=0; ch<=26; ch++){
+		str=getc(fp);
+		fseek(fp, -2, SEEK_CUR);
+		putchar(str);
+	}
+	fclose(fp);
+	
+}
