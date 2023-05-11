@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void main()
+{
+	FILE *fp;
+	int ch;
+	if((fp=fopen("sample3.txt", "w+"))==NULL)
+	{
+		printf("***파일을 열 수 없습니다.***\n");
+		exit(0);
+	}
+	
+	for(ch=65; ch<=92; ch++){
+		putc(ch, fp);
+	}
+	
+	fseek(fp, 8L, SEEK_SET);
+	ch = fgetc(fp);
+	printf("9번째 문자는 %c\n", ch);
+	fseek(fp, 16L, SEEK_SET);
+	ch = fgetc(fp);
+	printf("17번째 문자는 %c\n", ch);
+	
+	fclose(fp);
+}
