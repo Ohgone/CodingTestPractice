@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <conio.h>
+
+void main()
+{
+	char c;
+	FILE *fp;
+	
+	fp = fopen("sample2", "w");
+	for(c='A'; c<='Z'; c++)
+		fputc(c, fp);
+		
+	getch();
+	fclose(fp);
+	
+	fp = fopen("sample2", "r");
+	while(!feof(fp))
+		printf("%c", c=fgetc(fp));
+	fclose(fp);
+}
