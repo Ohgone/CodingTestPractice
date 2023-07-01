@@ -7,9 +7,13 @@ void main(){
 	int arr[3];
 	int input[3];
 	int i, j, strike, ball;
-	int count = 0;
+	int count = 0; int check=0;
 	
 	for(i=0; i<3; i++){ arr[i] = (rand() % 10); }
+	for(i=0; i<3; i++){
+		check = 0;
+		for(j=0; j<3; j++){ if(arr[i] == arr[j]){ check++; }}
+		if (check > 1){ printf("중복된 랜덤값 생성"); exit(0); }}
 	
 	for(i=0; i<3; i++){ printf("%d ", arr[i]); }
 	
