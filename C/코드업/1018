@@ -1,0 +1,7 @@
+#include <stdio.h>
+
+void main(){
+	char* time[20];
+	scanf("%s", time);
+	printf("%s", time);
+}
