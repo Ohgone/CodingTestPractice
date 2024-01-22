@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int arr[26];
+int cnt;
+string s;
+int flag = 0;
+int main(){
+	cin >> cnt;
+	
+	for(int i = 0; i < cnt; i++){
+		cin >> s;
+		arr[s[0] - 'a']++;
+	}
+	
+	for(int i = 0; i < 26; i++){
+		if(arr[i] >= 5){
+			cout << char(i + 'a');
+			flag = 1;
+		}
+	}
+	
+	if(flag == 0) cout << "PREDAJA";
+	
+	return 0;
+}
