@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+int n, m;
+string a, b;
+
+int main(){
+	cin >> n;
+	
+	while(n--){
+		cin >> m;
+		map<string, int> _map;
+		for(int i = 0; i < m; i++){
+			cin >> a >> b;
+			_map[b]++;
+		}
+		int ret = 1;
+		for(auto num : _map){
+			ret *= (num.second + 1);
+		}
+		cout << ret - 1 << "\n";
+	}
+
+	return 0;
+}
