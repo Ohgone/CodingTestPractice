@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int N, ret;
+string s;
+int main(){
+	cin >> N;
+	while(N--){
+		stack<char> stk;
+		cin >> s;
+		
+		for(int i = 0; i < s.size(); i++){
+			if(stk.size() && stk.top() == s[i]){
+				stk.pop();
+			} else{
+				stk.push(s[i]);
+			}
+		}
+		if(!stk.size()) ret++;
+	}
+	cout << ret;
+	return 0;
+}
