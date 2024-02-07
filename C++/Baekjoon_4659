@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+string str;
+
+bool isMoeum(int idx){
+	return (idx == 'a' || idx == 'e' || idx == 'i' || idx == 'o' || idx == 'u');
+}
+
+int main(){
+	while(true){
+		cin >> str;
+		if(str == "end") break;
+		
+		int mcnt = 0, jcnt = 0, prev = -1;
+		bool mexist = 0, flag = 0;
+		
+		for(int i = 0; i < str.size(); i++){
+			int idx = str[i];
+			if(isMoeum(idx)) mcnt++, jcnt = 0, mexist = 1;
+			else jcnt++, mcnt=0;
+			
+			if(mcnt >= 3 || jcnt >=3) flag = 1;
+			if(i >= 1 && (prev == idx) && (idx != 'e') && (idx != 'o')) flag = 1;
+			prev = idx;
+		}
+		if(!mexist) flag = 1;
+		if(flag) cout << "<" << str << ">" << " is not acceptable." << '\n';
+		else cout << "<" << str << ">" << " is acceptable." << '\n'; 
+		
+		
+	}
+	
+	return 0;
+}
