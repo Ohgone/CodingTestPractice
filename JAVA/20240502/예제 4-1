@@ -1,0 +1,16 @@
+package practice;
+
+abstract class Shape {
+	public double height, width;
+	
+	public Shape(double h, double w) {height = h; width = w;}
+	public void setHeight(double h) {height = h;}
+	public double getHeight() {return height;}
+	
+	public abstract double getArea();
+}
+
+class Triangle extends Shape {
+	public Triangle(double h, double w) {super(h, w);}
+	public double getArea() {return height * width * 0.5;}
+}
